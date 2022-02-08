@@ -1,4 +1,13 @@
 #!/bin/bash
 
-echo "Lokalise"
-exit 0
+BUILD_DIR=$1
+
+grep -q lokalise_rails $BUILD_DIR/Gemfile
+
+if [ $? == 0 ]; then 
+  echo "Lokalise"
+  exit 0
+else
+  echo "Not Lokalise"
+  exit 1
+fi
