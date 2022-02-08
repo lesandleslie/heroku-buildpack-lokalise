@@ -1,0 +1,15 @@
+#!/bin/bash
+
+BUILD_DIR=$1
+CACHE_DIR=$2
+ENV_DIR=$3
+
+if [ -d "$ENV_DIR" ]; then
+  for e in $(ls $ENV_DIR); do
+    export "$e=$(cat $ENV_DIR/$e)"
+  done
+fi
+
+echo '------> Downloading Lokalize files'
+
+( cd $BUILD_DIR && bundle exec rails lokalise_rails:import )
