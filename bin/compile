@@ -10,7 +10,7 @@ if [ -d "$ENV_DIR" ]; then
   done
 fi
 
-echo '------> Downloading Lokalize files'
+echo '-----> Downloading Lokalize files'
 
 ( cd $BUILD_DIR && bundle exec rails lokalise_rails:import )
 
