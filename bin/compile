@@ -13,3 +13,5 @@ fi
 echo '------> Downloading Lokalize files'
 
 ( cd $BUILD_DIR && bundle exec rails lokalise_rails:import )
+
+echo 
